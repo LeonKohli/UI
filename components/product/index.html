@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Product Showcase Card with Parallax</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #4b6cb7, #182848);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .card {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            border-radius: 40px;
+            box-shadow: 0 40px 60px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .product-img {
+            position: absolute;
+            top: 50%;
+            left: -30%;
+            transform: translateY(-50%);
+            width: 60%;
+            transition: 0.5s;
+            z-index: 2;
+        }
+
+        .card:hover .product-img {
+            left: -10%;
+            transform: translateY(-50%) rotate(-20deg);
+        }
+
+        .product-info {
+            position: absolute;
+            width: 50%;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: right;
+            transition: 0.5s;
+            padding-right: 40px;
+        }
+
+        .card:hover .product-info {
+            right: -120%;
+        }
+
+        .product-details {
+            position: absolute;
+            width: 55%;
+            right: -120%;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: left;
+            transition: 0.5s;
+            opacity: 0;
+            padding-left: 40px;
+        }
+
+        .card:hover .product-details {
+            right: 0;
+            opacity: 1;
+        }
+
+        h2 {
+            margin: 0 0 15px;
+            font-size: 48px;
+            color: #182848;
+        }
+
+        p {
+            margin: 0;
+            font-size: 24px;
+            color: #555;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 20px 40px;
+            background: #182848;
+            color: #fff;
+            font-size: 24px;
+            border-radius: 40px;
+            text-decoration: none;
+            margin-top: 30px;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #4b6cb7;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <img src="pods.png" alt="Product" class="product-img">
+        <div class="product-info">
+            <h2>Wireless Earbuds</h2>
+            <p>Immersive sound. Sleek design.</p>
+        </div>
+        <div class="product-details">
+            <h2>Features</h2>
+            <p>- Active Noise Cancellation</p>
+            <p>- 10 Hours Battery Life</p>
+            <p>- Wireless Charging Case</p>
+            <p>- Touch Controls</p>
+            <a href="#" class="cta-button">Buy Now</a>
+        </div>
+    </div>
+</body>
+
+</html>

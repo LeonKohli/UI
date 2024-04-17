@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Parallax Business Card with QR Code</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .card {
+            position: relative;
+            width: 400px;
+            height: 250px;
+            border-radius: 30px;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            background: url('https://images.unsplash.com/photo-1495616811223-4d98c6e9c869') center/cover;
+        }
+
+        .card-content {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            padding: 40px;
+            box-sizing: border-box;
+            text-align: center;
+            transition: 0.5s;
+            transform: translateY(-50%);
+            opacity: 1;
+        }
+
+        .card:hover .card-content {
+            transform: translateY(-50%);
+            opacity: 0;
+        }
+
+        .card-content h2 {
+            margin: 0 0 10px;
+            font-size: 36px;
+            color: #fff;
+            transition: 0.5s;
+        }
+
+        .card:hover .card-content h2 {
+            transform: translateY(-200px);
+        }
+
+        .card-content p {
+            margin: 0;
+            font-size: 18px;
+            color: #fff;
+            transition: 0.5s;
+        }
+
+        .card:hover .card-content p {
+            transform: translateY(200px);
+        }
+
+        .qr-code {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 120px;
+            height: 120px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/6/61/QR_deWP.svg') center/cover;
+            transition: 0.5s;
+        }
+
+        .card:hover .qr-code {
+            transform: translate(-50%, -50%) scale(1);
+            transition-delay: 0.2s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-content">
+            <h2>John Doe</h2>
+            <p>Creative Director</p>
+        </div>
+        <div class="qr-code"></div>
+    </div>
+</body>
+
+</html>
